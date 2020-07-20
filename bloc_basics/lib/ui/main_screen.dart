@@ -1,9 +1,10 @@
-
 import 'package:blocbasics/bloc/bloc_provider.dart';
 import 'package:blocbasics/bloc/location_bloc.dart';
 import 'package:blocbasics/data/location.dart';
 import 'package:blocbasics/ui/location_screen.dart';
+import 'package:blocbasics/ui/restaurant_screen.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
   @override
@@ -17,7 +18,9 @@ class MainScreen extends StatelessWidget {
           return LocationScreen();
         }
 
-        return Container();
+        return RestaurantScreen(
+          location: location,
+        );
       },
     );
   }
