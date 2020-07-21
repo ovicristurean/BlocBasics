@@ -2,6 +2,7 @@ import 'package:blocbasics/bloc/bloc_provider.dart';
 import 'package:blocbasics/bloc/restaurant_bloc.dart';
 import 'package:blocbasics/data/location.dart';
 import 'package:blocbasics/data/restaurant.dart';
+import 'package:blocbasics/ui/favorite_screen.dart';
 import 'package:blocbasics/ui/restaurant_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -16,6 +17,13 @@ class RestaurantScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(location.title),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.favorite_border),
+            onPressed: () => Navigator.of(context)
+                .push(MaterialPageRoute(builder: (_) => FavoriteScreen())),
+          )
+        ],
       ),
       body: _buildSearch(context),
     );
