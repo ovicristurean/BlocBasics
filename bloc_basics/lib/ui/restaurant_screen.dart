@@ -7,6 +7,8 @@ import 'package:blocbasics/ui/restaurant_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import 'location_screen.dart';
+
 class RestaurantScreen extends StatelessWidget {
   final Location location;
 
@@ -26,6 +28,14 @@ class RestaurantScreen extends StatelessWidget {
         ],
       ),
       body: _buildSearch(context),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.edit_location),
+        onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => LocationScreen(
+              isFullScreenDialog: true,
+            ),
+            fullscreenDialog: true)),
+      ),
     );
   }
 
